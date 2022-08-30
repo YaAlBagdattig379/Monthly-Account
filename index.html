@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Account</title>
+    <!-- Fab Icon Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Awesome link-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Cdn link-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Custom Css  -->
+  </head>
+  <body>
+    <header>
+      <nav class="">
+        <div class="container">
+          <h1 class="text-4xl text-center font-bold text-slate-700 py-3">
+            <span class="text-[#31A5AC]">Monthly Account</span>
+            <span class="rounded-full shadow-md"
+              >
+              <i class="text-gray-700 fa-solid fa-indian-rupee-sign m-4"></i>
+            </span>
+          </h1>
+        </div>
+      </nav>
+    </header>
+    <!-- END OF NAV AND HEADER -->
+
+    <main class="container mx-auto">
+      <section id="hero">
+        <div class="container grid grid-cols-3 sm:grid-cols-4">
+          <div class="col-span-3  sm:col-span-2 flex justify-center align-middle">
+            <img src="./img/2022-08.jpg"class="w-4/5  sm:w-screen md:w-screen"alt="Body-img"/>
+          </div>
+          <!-- END OF IMAGE BOX -->
+          <div class="col-span-3 sm:col-span-2 lg:my-8 sm:my-6 ]">
+            <div class="calculation-box bg-gray-100 w-4/5 rounded-md mx-auto py-5 px-6 shadow-lg">
+              <div class="income-box mb-5">
+                <!-- Title -->
+                <h2 class="text-center font-bold text-lg mb-3">Income</h2>
+                <div class="grid grid-cols-3">
+                  <span class="col-span-1">Income :</span>
+                  <input type="text"placeholder="Monthly Income"id="income-input-box"
+                    class="bg-[#DCDCDC] w-9/12 h-8 rounded-md px-2 ml-2 col-span-2"/>
+                </div>
+              </div>
+              <!-- END OF INCOME -->
+              <div class="expense-box">
+                <!-- Title -->
+                <h2 class="text-center font-bold text-lg mb-3">Expenses</h2>
+                <!-- Title -->
+
+                <div class="pocketMoney-money-box grid grid-cols-3">
+                  <span class="col-span-1">Pocket Money :</span>
+                  <input type="text"placeholder=" Pocket Money"id="pocketMoney-input-box"class="bg-[#DCDCDC] h-8 w-9/12 rounded-md px-2 ml-2 col-span-2"/>
+                </div>
+                <!-- 1st Box -->
+                <div class="rent-money-box grid grid-cols-3 my-4">
+                  <span class="col-span-1">Home Rent:</span>
+                  <input type="text"placeholder=" Home Rent"id="homeRent-input-box"class="bg-[#DCDCDC] w-9/12 h-8 rounded-md px-2 ml-2 col-span-2"/>
+                </div>
+                <!-- 2nd Box -->
+                <div class="food-money-box grid grid-cols-3 my-4">
+                  <span class="col-span-1">Foodstuff:</span>
+                  <input type="text"placeholder="Foodstuff Money"id="food-input-box"
+                    class="bg-[#DCDCDC] w-9/12 h-8 rounded-md px-2 ml-2 col-span-2"/>
+                </div>
+                <!-- 3rd Box -->
+                <button id="calculate-button"class="bg-[#59A5FF] text-white px-4 py-1 rounded-md font-semibold">
+                  Calculate
+                </button>
+                <div class="my-4 text-center">
+                  <span class="block font-semibold mb-4">Total Expense:
+                    <span class="font-normal"id="display-total-expense">
+                      00</span>/-</span>
+                  <span class="block font-semibold">Balance: <span class="font-normal"id="display-balance">00</span>/-</span>
+                </div>
+              </div>
+              <!-- END OF EXPENSE -->
+              <div class="saving-box my-7">
+                <!-- TITLE -->
+                <div class="grid grid-cols-4">
+                  <span class="col-span-1">Saving: </span>
+                  <input id="saving-input-box"type="text"class="bg-[#DCDCDC] w-12/12 col-span-1 rounded-md px-2"placeholder="parentage"/>
+                  <span class="col-span-1 text-center">%</span>
+                  <button id="saving-button"class="rounded col-span-1 bg-[#59A5FF] py-1 text-white font-semibold">Save</button>
+                </div>
+                <!-- START OF BALANCE -->
+                <div class="text-center my-6">
+                  <div class="font-bold mb-4">
+                    Saving Amount:
+                    <span class="font-normal" id="saving-amount">000</span> /-
+                  </div>
+                  <div class="font-bold">Remaining Balance: <span class="font-normal"id="remaining-balance">000</span>/-
+                  </div>
+                </div>
+              </div>
+              <!-- END OF SAVING  -->
+              <div id="error"class="hidden text-center text-red-600 font-semibold border-red-400 border-2 rounded-md py-1">jjj
+              </div>
+            </div>
+            <!-- END OF CALCULATION DIV -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Javascript Script link -->
+    <script src="js/index.js"></script>
+    <!-- <script src="js/.js"></script> -->
+  </body>
+</html>
