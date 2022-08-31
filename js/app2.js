@@ -1,7 +1,5 @@
 // Calculation Button Click
-document
-  .getElementById("calculate-button")
-  .addEventListener("click", function () {
+document.getElementById("calculate-button").addEventListener("click", function (){
     const err = (document.getElementById("error").style.display = "none");
     calculateBalance();
     getInputValue("food-input-box");
