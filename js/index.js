@@ -1,39 +1,41 @@
-// first function 
-function inputField(){
-   const incomeInput = document.getElementById("income-input-box");
+// first function for input monthy income 
+function inputField(inputId){
+   const incomeInput = document.getElementById( inputId + "-input-box");
    const incomeValue = incomeInput.value ;
    const incomeText = parseInt(incomeValue);
    incomeInput.value = '';
    return incomeText
-   
 }
 // calculate button     
 document.getElementById("calculate-button").addEventListener("click",function(){
    // input income   
    // input income   
-   const incomeText = inputField()
+   const incomeText = inputField("income")
    // const incomeInput = document.getElementById("income-input-box");
    // const incomeValue = incomeInput.value ;
    // const incomeText = parseInt(incomeValue);
 //    return incomeText;
 
-   // input pocket money   
-   const pocketMoneyInput = document.getElementById("pocketMoney-input-box");
-   const pocketMoneyValue = pocketMoneyInput.value ;
-   const pocketMoneyText = parseInt(pocketMoneyValue);
-   pocketMoneyInput.value = '';
+   // input pocket money 
+   const pocketMoneyText = inputField("pocketMoney") 
+   // const pocketMoneyInput = document.getElementById("pocketMoney-input-box");
+   // const pocketMoneyValue = pocketMoneyInput.value ;
+   // const pocketMoneyText = parseInt(pocketMoneyValue);
+   // pocketMoneyInput.value = '';
 
 //     // input home rent   
-    const homeRentInput = document.getElementById("homeRent-input-box");
-    const homeRentValue = homeRentInput.value ;
-    const homeRentText = parseInt(homeRentValue);
-    homeRentInput.value = '';
+    const homeRentText = inputField("homeRent");
+   //  const homeRentInput = document.getElementById("homeRent-input-box");
+   //  const homeRentValue = homeRentInput.value ;
+   //  const homeRentText = parseInt(homeRentValue);
+   //  homeRentInput.value = '';
 
 //     // input food cost   
-    const foodMoneyInput = document.getElementById("food-input-box");
-    const foodMoneyValue = foodMoneyInput.value ;
-    const foodMoneyText = parseInt(foodMoneyValue);
-    foodMoneyInput.value = '';
+    const foodMoneyText = inputField("food");
+   //  const foodMoneyInput = document.getElementById("food-input-box");
+   //  const foodMoneyValue = foodMoneyInput.value ;
+   //  const foodMoneyText = parseInt(foodMoneyValue);
+   //  foodMoneyInput.value = '';
 
     // divided by spending total expences
     const totalExpenses = document.getElementById("display-total-expense");
