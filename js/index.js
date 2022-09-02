@@ -1,30 +1,38 @@
-// calculate button     
+// first function 
+function inputField(){
+   const incomeInput = document.getElementById("income-input-box");
+   const incomeValue = incomeInput.value ;
+   const incomeText = parseInt(incomeValue);
+   incomeInput.value = '';
+   return incomeText
+   
+}
 // calculate button     
 document.getElementById("calculate-button").addEventListener("click",function(){
    // input income   
    // input income   
-   const incomeInput = document.getElementById("income-input-box");
-   const incomeValue = incomeInput.value ;
-   const incomeText = parseFloat(incomeValue);
-   incomeInput.value = '';
+   const incomeText = inputField()
+   // const incomeInput = document.getElementById("income-input-box");
+   // const incomeValue = incomeInput.value ;
+   // const incomeText = parseInt(incomeValue);
 //    return incomeText;
 
    // input pocket money   
    const pocketMoneyInput = document.getElementById("pocketMoney-input-box");
    const pocketMoneyValue = pocketMoneyInput.value ;
-   const pocketMoneyText = parseFloat(pocketMoneyValue);
+   const pocketMoneyText = parseInt(pocketMoneyValue);
    pocketMoneyInput.value = '';
 
 //     // input home rent   
     const homeRentInput = document.getElementById("homeRent-input-box");
     const homeRentValue = homeRentInput.value ;
-    const homeRentText = parseFloat(homeRentValue);
+    const homeRentText = parseInt(homeRentValue);
     homeRentInput.value = '';
 
 //     // input food cost   
     const foodMoneyInput = document.getElementById("food-input-box");
     const foodMoneyValue = foodMoneyInput.value ;
-    const foodMoneyText = parseFloat(foodMoneyValue);
+    const foodMoneyText = parseInt(foodMoneyValue);
     foodMoneyInput.value = '';
 
     // divided by spending total expences
@@ -45,22 +53,22 @@ document.getElementById("saving-button").addEventListener("click",function(){
    // divided by spending total expences
    const totalExpenses = document.getElementById("display-total-expense");
    const totalExpensesText = totalExpenses.innerText;
-   const forTotalNumber = parseFloat(totalExpensesText);
+   const forTotalNumber = parseInt(totalExpensesText);
    // remained balance after spending 
    const balance = document.getElementById("display-balance");
    const balanceText = balance.innerText;
-   const forBalanceNumber = parseFloat(balanceText);
+   const forBalanceNumber = parseInt(balanceText);
    //   percentage    
    const savePercentage = document.getElementById("saving-input-box");
    const savePercentageText = savePercentage.value;
-   const savepercentageNumeber = parseFloat(savePercentageText);
+   const savepercentageNumeber = parseInt(savePercentageText);
 
    // console.log(savePercentageValue);
    savePercentage.value = '';
    // saving Amount 
    const savingAmount = document.getElementById("saving-amount");
    const savingAmountText = savingAmount.innerText;
-   const previousSavingAmount = parseFloat(savingAmountText);
+   const previousSavingAmount = parseInt(savingAmountText);
    // cal whole 
    // cal whole 
    const wholeMoney  = forTotalNumber + forBalanceNumber  ;
@@ -70,7 +78,7 @@ document.getElementById("saving-button").addEventListener("click",function(){
    // remaining balance 
    const remainBalance = document.getElementById("remaining-balance");
    const remainBalanceText = remainBalance.innerText;
-   const previousRemainBalance = parseFloat(remainBalanceText);
+   const previousRemainBalance = parseInt(remainBalanceText);
    const remain = forBalanceNumber - getPercetage; 
    remainBalance.innerText = remain + previousRemainBalance;
 })
