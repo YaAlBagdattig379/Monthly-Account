@@ -8,45 +8,33 @@ function inputField(inputId){
 }
 // calculate button     
 document.getElementById("calculate-button").addEventListener("click",function(){
-   // input income   
-   // input income   
+   // debugger;
+   //  income input   
    const incomeText = inputField("income")
-   // const incomeInput = document.getElementById("income-input-box");
-   // const incomeValue = incomeInput.value ;
-   // const incomeText = parseInt(incomeValue);
-//    return incomeText;
-
-   // input pocket money 
+   // spending input 
    const pocketMoneyText = inputField("pocketMoney") 
-   // const pocketMoneyInput = document.getElementById("pocketMoney-input-box");
-   // const pocketMoneyValue = pocketMoneyInput.value ;
-   // const pocketMoneyText = parseInt(pocketMoneyValue);
-   // pocketMoneyInput.value = '';
-
-//     // input home rent   
-    const homeRentText = inputField("homeRent");
-   //  const homeRentInput = document.getElementById("homeRent-input-box");
-   //  const homeRentValue = homeRentInput.value ;
-   //  const homeRentText = parseInt(homeRentValue);
-   //  homeRentInput.value = '';
-
-//     // input food cost   
-    const foodMoneyText = inputField("food");
-   //  const foodMoneyInput = document.getElementById("food-input-box");
-   //  const foodMoneyValue = foodMoneyInput.value ;
-   //  const foodMoneyText = parseInt(foodMoneyValue);
-   //  foodMoneyInput.value = '';
-
-    // divided by spending total expences
-    const totalExpenses = document.getElementById("display-total-expense");
-    const totalExpensesText = totalExpenses.innerText;
-    totalExpenses.innerText = pocketMoneyText + homeRentText + foodMoneyText;
-
-    // remained balance after spending 
-    const balance = document.getElementById("display-balance");
-    const balanceText = balance.innerText;
-    balance.innerText = incomeText - totalExpenses.innerText; 
+   const homeRentText = inputField("homeRent");
+   const foodMoneyText = inputField("food");
+  
+   //  total expences
+   //  total expences
+   const totalExpense = document.getElementById("totalExpenses-balance");
+   const totalExpenseText = totalExpense.innerText;
+   const previousExpenseNumber = parseInt(totalExpenseText);
+   const wholeExpensesCost = pocketMoneyText + homeRentText + foodMoneyText;
+   totalExpense.innerText = wholeExpensesCost + previousExpenseNumber ;
+   // remained balance after spending 
+   // remained balance after spending 
+   const balance = document.getElementById("current-balance");
+   const balanceText = balance.innerText;
+   const previousBalanceNumber = parseInt(balanceText);
+   const currentBalance =  incomeText - totalExpense.innerText; 
+   balance.innerText =  currentBalance + previousBalanceNumber; 
 })
+
+function balanceView(){
+
+}
    
 // save button  
 // save button  
