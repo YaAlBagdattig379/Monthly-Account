@@ -34,27 +34,46 @@ document.getElementById("calculate-button").addEventListener("click",function(){
 
 // function for  saving only 
 // function for  saving only 
-// save button  
-document.getElementById("saving-button").addEventListener("click",function(){
-   
-   //  debugger;
-   // divided by spending total expences
-   const totalExpense = document.getElementById("totalExpenses-balance");
+
+// function for balance 
+function balaneInnertext(idBalace){
+   const totalExpense = document.getElementById( idBalace + "-balance");
    const totalExpenseText = totalExpense.innerText;
    const previousExpenseNumber = parseInt(totalExpenseText);
    totalExpense.innerText = '';
-
-   // remained balance after spending 
-   const balance = document.getElementById("current-balance");
-   const balanceText = balance.innerText;
-   const previousBalanceNumber = parseInt(balanceText);
-   balance.innerText = '';
-
-   //   percentage    
+   return previousExpenseNumber;
+}
+// function for save input 
+function buttonSave(){
    const savepercentage = document.getElementById("saving-input-box");
    const savePercentageInput = savepercentage.value;
    const savePercentageNumber = parseInt(savePercentageInput);
    savepercentage.value = '';
+   return savePercentageNumber;
+} 
+document.getElementById("saving-button").addEventListener("click",function(){
+   
+   //  debugger;
+   // divided by spending total expences
+   // const totalExpense = document.getElementById("totalExpenses-balance");
+   // const totalExpenseText = totalExpense.innerText;
+   // const previousExpenseNumber = parseInt(totalExpenseText);
+   // totalExpense.innerText = '';
+  const previousExpenseNumber = balaneInnertext("totalExpenses")
+  const previousBalanceNumber = balaneInnertext("current")
+
+   // remained balance after spending 
+   // const balance = document.getElementById("current-balance");
+   // const balanceText = balance.innerText;
+   // const previousBalanceNumber = parseInt(balanceText);
+   // balance.innerText = '';
+
+   //   percentage    
+   // const savepercentage = document.getElementById("saving-input-box");
+   // const savePercentageInput = savepercentage.value;
+   // const savePercentageNumber = parseInt(savePercentageInput);
+   // savepercentage.value = '';
+   const savePercentageNumber = buttonSave()
 
    // saving Amount 
    const savingAmount = document.getElementById("saving-amount");
@@ -66,7 +85,6 @@ document.getElementById("saving-button").addEventListener("click",function(){
    const wholeMoney  = previousExpenseNumber + previousBalanceNumber  ;
    const getPercetage = ( savePercentageNumber / 100) * wholeMoney;
    savingAmount.innerText = getPercetage + previousSavingAmount;
-
 
    // remaining balance 
    const remainBalance = document.getElementById("remaining-balance");
