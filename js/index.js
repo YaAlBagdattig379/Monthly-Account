@@ -66,46 +66,19 @@ function buttonSave(){
 } 
 document.getElementById("saving-button").addEventListener("click",function(){
    
-   //  debugger;
-   // divided by spending total expences
-   // const totalExpense = document.getElementById("totalExpenses-balance");
-   // const totalExpenseText = totalExpense.innerText;
-   // const previousExpenseNumber = parseInt(totalExpenseText);
-   // totalExpense.innerText = '';
+  //  debugger;
+  // divided by spending total expences
   const previousExpenseNumber = balaneInnertext("totalExpenses")
-  const previousBalanceNumber = balaneInnertext("current")
-
-   // remained balance after spending 
-   // const balance = document.getElementById("current-balance");
-   // const balanceText = balance.innerText;
-   // const previousBalanceNumber = parseInt(balanceText);
-   // balance.innerText = '';
-
+  // remained balance after spending 
+  const previousBalanceNumber = balaneInnertext("current");
    //   percentage    
    // const savepercentage = document.getElementById("saving-input-box");
    // const savePercentageInput = savepercentage.value;
    // const savePercentageNumber = parseInt(savePercentageInput);
    // savepercentage.value = '';
    const savePercentageNumber = buttonSave()
-
    // saving Amount 
-   // const savingAmount = document.getElementById("saving-amount");
-   // const savingAmountText = savingAmount.innerText;
-   // const previousSavingAmount = parseInt(savingAmountText);
-
-   // cal whole 
-   // cal whole 
-   // const wholeMoney  = previousExpenseNumber + previousBalanceNumber  ;
-   // const getPercetage = ( savePercentageNumber / 100) * wholeMoney;
-   // savingAmount.innerText = getPercetage + previousSavingAmount;
    const getPercetage = savingRemaining(previousExpenseNumber,previousBalanceNumber,savePercentageNumber);
-
-   // remaining balance 
-   // const remainBalance = document.getElementById("remaining-balance");
-   // const remainBalanceText = remainBalance.innerText;
-   // const previousRemainBalance = parseInt(remainBalanceText);
-   // const remain = previousBalanceNumber - getPercetage; 
-   // remainBalance.innerText = remain + previousRemainBalance;
 })
 
 function savingRemaining(previousExpenseNumber,previousBalanceNumber,savePercentageNumber){
