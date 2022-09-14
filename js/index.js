@@ -1,4 +1,4 @@
-// first function for input monthy income 
+// first function for input monthy income and spend
 function inputField(inputId){
    const incomeInput = document.getElementById( inputId + "-input-box");
    const incomeValue = incomeInput.value ;
@@ -6,16 +6,16 @@ function inputField(inputId){
    incomeInput.value = '';
    return incomeText
 }
+//  function for input monthy income and spend
 // calculate button     
 document.getElementById("calculate-button").addEventListener("click",function(){
-   // debugger;
+     
    //  income input   
    const incomeText = inputField("income")
    // spending input 
    const pocketMoneyText = inputField("pocketMoney") 
    const homeRentText = inputField("homeRent") 
    const foodMoneyText = inputField("food") 
-
    //  total expences
    //  total expences
    const totalExpense = document.getElementById("totalExpenses-balance");
@@ -25,7 +25,6 @@ document.getElementById("calculate-button").addEventListener("click",function(){
    totalExpense.innerText = wholeExpensesCost + previousExpenseNumber ;
    // remained balance after spending 
    // remained balance after spending 
-   // balanceView(incomeText,totalExpenseText)
    const balance = document.getElementById("current-balance");
    const balanceText = balance.innerText;
    const previousBalanceNumber = parseInt(balanceText);
@@ -35,52 +34,45 @@ document.getElementById("calculate-button").addEventListener("click",function(){
 
 // function for  saving only 
 // function for  saving only 
-// function for  saving only 
-function savingField(inputExpense){
-   const totalExpenses = document.getElementById(inputExpense);
-   const totalExpensesText = totalExpenses.innerText;
-   const forTotalNumber = parseInt(totalExpensesText);
-   return forTotalNumber;
-}
 // save button  
 document.getElementById("saving-button").addEventListener("click",function(){
+   
    //  debugger;
    // divided by spending total expences
-   // const totalExpenses = document.getElementById("totalExpenses-balance");
-   // const totalExpensesText = totalExpenses.innerText;
-   // const forTotalNumber = parseInt(totalExpensesText);
-   const forTotalNumber =   savingField("totalExpenses-balance")
+   const totalExpense = document.getElementById("totalExpenses-balance");
+   const totalExpenseText = totalExpense.innerText;
+   const previousExpenseNumber = parseInt(totalExpenseText);
+   totalExpense.innerText = '';
+
    // remained balance after spending 
-   // const balance = document.getElementById("current-balance");
-   // const balanceText = balance.innerText;
-   // const forBalanceNumber = parseInt(balanceText);
-   const forBalanceNumber =   savingField("current-balance")
+   const balance = document.getElementById("current-balance");
+   const balanceText = balance.innerText;
+   const previousBalanceNumber = parseInt(balanceText);
+   balance.innerText = '';
 
    //   percentage    
-   // const savePercentage = document.getElementById("saving-input-box");
-   // const savePercentageText = savePercentage.value;
-   // const savepercentageNumeber = parseInt(savePercentageText);
-   const savepercentageNumeber =   savingField("saving-input-box")
-
-   // savePercentage.value = '';
+   const savepercentage = document.getElementById("saving-input-box");
+   const savePercentageInput = savepercentage.value;
+   const savePercentageNumber = parseInt(savePercentageInput);
+   savepercentage.value = '';
 
    // saving Amount 
    const savingAmount = document.getElementById("saving-amount");
    const savingAmountText = savingAmount.innerText;
    const previousSavingAmount = parseInt(savingAmountText);
+
    // cal whole 
    // cal whole 
-   const wholeMoney  = forTotalNumber + forBalanceNumber  ;
-   const getPercetage = ( savepercentageNumeber / 100) * wholeMoney;
+   const wholeMoney  = previousExpenseNumber + previousBalanceNumber  ;
+   const getPercetage = ( savePercentageNumber / 100) * wholeMoney;
    savingAmount.innerText = getPercetage + previousSavingAmount;
+
 
    // remaining balance 
    const remainBalance = document.getElementById("remaining-balance");
    const remainBalanceText = remainBalance.innerText;
    const previousRemainBalance = parseInt(remainBalanceText);
-   const remain = forBalanceNumber - getPercetage; 
+   const remain = previousBalanceNumber - getPercetage; 
    remainBalance.innerText = remain + previousRemainBalance;
-   // console.log(savepercentageNumeber)
-
 })
 
