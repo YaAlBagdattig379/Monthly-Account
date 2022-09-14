@@ -31,13 +31,26 @@ document.getElementById("calculate-button").addEventListener("click",function(){
    const currentBalance =  incomeText - totalExpense.innerText; 
    balance.innerText =  currentBalance + previousBalanceNumber; 
 })
-
+function balannceCal(){
+    const totalExpense = document.getElementById("totalExpenses-balance");
+   const totalExpenseText = totalExpense.innerText;
+   const previousExpenseNumber = parseInt(totalExpenseText);
+   const wholeExpensesCost = pocketMoneyText + homeRentText + foodMoneyText;
+   totalExpense.innerText = wholeExpensesCost + previousExpenseNumber ;
+   // remained balance after spending 
+   // remained balance after spending 
+   const balance = document.getElementById("current-balance");
+   const balanceText = balance.innerText;
+   const previousBalanceNumber = parseInt(balanceText);
+   const currentBalance =  incomeText - totalExpense.innerText; 
+   balance.innerText =  currentBalance + previousBalanceNumber; 
+}
 // function for  saving only 
 // function for  saving only 
 
 // function for balance 
-function balaneInnertext(idBalace){
-   const totalExpense = document.getElementById( idBalace + "-balance");
+function balaneInnertext(idBalance){
+   const totalExpense = document.getElementById( idBalance + "-balance");
    const totalExpenseText = totalExpense.innerText;
    const previousExpenseNumber = parseInt(totalExpenseText);
    totalExpense.innerText = '';
@@ -76,21 +89,36 @@ document.getElementById("saving-button").addEventListener("click",function(){
    const savePercentageNumber = buttonSave()
 
    // saving Amount 
+   // const savingAmount = document.getElementById("saving-amount");
+   // const savingAmountText = savingAmount.innerText;
+   // const previousSavingAmount = parseInt(savingAmountText);
+
+   // cal whole 
+   // cal whole 
+   // const wholeMoney  = previousExpenseNumber + previousBalanceNumber  ;
+   // const getPercetage = ( savePercentageNumber / 100) * wholeMoney;
+   // savingAmount.innerText = getPercetage + previousSavingAmount;
+   const getPercetage = savingRemaining(previousExpenseNumber,previousBalanceNumber,savePercentageNumber);
+
+   // remaining balance 
+   // const remainBalance = document.getElementById("remaining-balance");
+   // const remainBalanceText = remainBalance.innerText;
+   // const previousRemainBalance = parseInt(remainBalanceText);
+   // const remain = previousBalanceNumber - getPercetage; 
+   // remainBalance.innerText = remain + previousRemainBalance;
+})
+
+function savingRemaining(previousExpenseNumber,previousBalanceNumber,savePercentageNumber){
    const savingAmount = document.getElementById("saving-amount");
    const savingAmountText = savingAmount.innerText;
    const previousSavingAmount = parseInt(savingAmountText);
-
-   // cal whole 
-   // cal whole 
    const wholeMoney  = previousExpenseNumber + previousBalanceNumber  ;
    const getPercetage = ( savePercentageNumber / 100) * wholeMoney;
    savingAmount.innerText = getPercetage + previousSavingAmount;
-
    // remaining balance 
    const remainBalance = document.getElementById("remaining-balance");
    const remainBalanceText = remainBalance.innerText;
    const previousRemainBalance = parseInt(remainBalanceText);
    const remain = previousBalanceNumber - getPercetage; 
    remainBalance.innerText = remain + previousRemainBalance;
-})
-
+}
