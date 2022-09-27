@@ -48,12 +48,13 @@
                 <!-- Title -->
                 <h2 class="text-center font-bold text-lg mb-3">Income</h2>
                 <!-- for error show p  -->
-                <p id="show-error"style="color: red;margin-left:20px;font-size: 14px"></p>
                 <div class="grid grid-cols-3">
                   <span class="col-span-1">Income :</span>
                   <input type="text"placeholder="Monthly Income"id="income-input-box"
                     class="bg-[#DCDCDC] w-9/12 h-8 rounded-md px-2 ml-2 col-span-2"/>
                 </div>
+                <!-- income input error  -->
+                <p id="income-input-error"style="color: red;margin-left:20px;font-size: 13px"></p>
               </div>
               <!-- END OF INCOME -->
               <div class="expense-box">
@@ -76,6 +77,7 @@
                   <input type="text"placeholder="Foodstuff Money"id="food-input-box"
                     class="bg-[#DCDCDC] w-9/12 h-8 rounded-md px-2 ml-2 col-span-2"/>
                 </div>
+                <p id="expenses-inputError"style="color: red;margin-left:20px;font-size: 13px"></p>
                 <!-- 3rd Box -->
                 <button id="calculate-button"class="bg-[#59A5FF] text-white px-4 py-1 rounded-md font-semibold">
                   Calculate
@@ -90,6 +92,7 @@
               <!-- END OF EXPENSE -->
               <div class="saving-box my-7">
                 <!-- TITLE -->
+                <p id="show-error"style="color: red;margin-left:20px;font-size: 13px"></p>
                 <div class="grid grid-cols-4">
                   <span class="col-span-1">Saving: </span>
                   <input id="saving-input-box"type="text"class="bg-[#DCDCDC] w-12/12 col-span-1 rounded-md px-2"placeholder="parentage"/>
@@ -102,13 +105,12 @@
                     Saving Amount:
                     <span class="font-normal" id="saving-amount">000</span> /-
                   </div>
-                  <div class="font-bold">Remaining Balance: <span class="font-normal"id="remaining-balance">000</span>/-
+                  <div class="font-bold">Remaining Balance: <span class="font-normal"id="remainingBalance-amount">000</span>/-
                   </div>
                 </div>
               </div>
+
               <!-- END OF SAVING  -->
-              <div id="error"class="hidden text-center text-red-600 font-semibold border-red-400 border-2 rounded-md py-1">jjj
-              </div>
             </div>
             <!-- END OF CALCULATION DIV -->
           </div>
@@ -118,6 +120,5 @@
 
     <!-- Javascript Script link -->
     <script src="js/index.js"></script>
-    <!-- <script src="js/.js"></script> -->
   </body>
 </html>
